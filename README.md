@@ -1,6 +1,6 @@
 # Project Details
 
-Design Link [here](https://xd.adobe.com/view/db8e2552-41be-4a88-b030-7e4c26201a75-8edd/screen/4182f975-3940-411f-88d2-54fc724560cf/)
+Design Link [here](https://xd.adobe.com/view/d3f6bc45-8898-46dd-98b0-eca621fdf489-86a5/screen/4182f975-3940-411f-88d2-54fc724560cf/specs/)
 
 ---
 
