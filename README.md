@@ -1,3 +1,9 @@
+# Project Details
+
+Design Link [here](https://xd.adobe.com/view/db8e2552-41be-4a88-b030-7e4c26201a75-8edd/screen/4182f975-3940-411f-88d2-54fc724560cf/)
+
+---
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
