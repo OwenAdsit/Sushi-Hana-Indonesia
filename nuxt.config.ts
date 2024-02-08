@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/i18n',
+    '@nuxt/content',
   ],
   css: ['~/assets/css/tailwind.css'], 
   postcss: {
