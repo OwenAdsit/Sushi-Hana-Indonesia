@@ -4,17 +4,17 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     '@nuxt/content',
+    '@nuxtjs/tailwindcss',
   ],
-  css: ['~/assets/css/tailwind.css'], 
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
-  },
+
   i18n: {
     locales: ['id-ID'],
     defaultLocale: 'id-ID',
-    vueI18n: './i18n.config.js'
-  }
+    vueI18n: './i18n.config.js',
+  },
+
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config',
+  },
 })
