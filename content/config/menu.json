@@ -1,0 +1,20 @@
+{
+  "body": [
+    {
+      "label": "HOME",
+      "link": "/"
+    },
+    {
+      "label": "CONTACT",
+      "link": "/contact"
+    },
+    {
+      "label": "MENU",
+      "link": "#menu"
+    },
+    {
+      "label": "GALLERY",
+      "link": "/gallery"
+    }
+  ]
+}

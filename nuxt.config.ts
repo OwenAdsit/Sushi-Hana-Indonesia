@@ -2,9 +2,12 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
+    '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@hypernym/nuxt-gsap',
   ],
 
   i18n: {
@@ -16,5 +19,16 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     configPath: 'tailwind.config',
+  },
+
+  googleFonts: {
+    families: {
+      Cinzel: '400..900',
+    },
+  },
+
+  gsap: {
+    // provide: false,
+    // composables: true,
   },
 })

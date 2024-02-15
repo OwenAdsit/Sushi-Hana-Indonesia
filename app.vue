@@ -1,5 +1,11 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <nuxt-layout>
+    <nuxt-page />
+  </nuxt-layout>
 </template>
+
+<style>
+body {
+  @apply bg-dark font-serif text-light;
+}
+</style>
