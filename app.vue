@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <h1 class="text-xl text-blue-500">Welcome to Nuxt.js!</h1>
-    <NuxtWelcome />
-  </div>
+  <nuxt-layout>
+    <nuxt-page />
+  </nuxt-layout>
 </template>
+
+<style>
+body {
+  @apply bg-dark font-serif text-light;
+}
+</style>

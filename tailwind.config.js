@@ -1,18 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./app.vue",
-    "./error.vue",
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './app.vue',
+    './error.vue',
   ],
   theme: {
     colors: {
       light: '#fff',
       dark: '#101010',
-      prmiary: '#AA1717'
+      primary: '#AA1717',
     },
     container: {
       center: true,
@@ -22,11 +22,13 @@ export default {
         // 45px
         sm: '2.8125rem',
         // 104px
-        xl: '6.5rem'
-      }
+        xl: '6.5rem',
+      },
+    },
+    fontFamily: {
+      serif: ['Cinzel', 'serif'],
     },
     extend: {},
   },
   plugins: [],
 }
-
