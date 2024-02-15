@@ -17,14 +17,15 @@ onMounted(() => {
       <nuxt-img src="/img/sushi-hana-logo.svg" width="93px" height="95px" format="webp" />
 
       <nav>
-        <ul class="flex flex-row gap-[67px]">
+        <!-- Kalau ada class spacing tailwind yang cukup dekat, boleh dipakai, Dari pada bikin class arbitrary baru -->
+        <ul class="flex flex-row gap-16">
           <sh-link v-for="menu in data" :key="menu.label">
             {{ menu.label }}
           </sh-link>
         </ul>
       </nav>
 
-      <nuxt-link class="text-[13px] font-bold underline underline-offset-8">
+      <nuxt-link class="text-13 font-bold underline underline-offset-8">
         ORDER ONLINE
       </nuxt-link>
     </div>

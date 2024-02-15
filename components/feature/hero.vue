@@ -13,23 +13,24 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="hero" class="h-screen relative flex flex-col justify-center overflow-hidden">
-    <nuxt-img
-      src="/img/indonesiafood@2x.png"
-      width="534px"
-      height="749px"
-      format="webp"
-      class="hero-image absolute bottom-0 left-32"
-    />
-
-    <div class="absolute left-[593px]">
-      <h1 class="heading-1 text-[85px] leading-[100px] font-bold w-[716px]">
-        {{ hero?.heading }}
-      </h1>
-
-      <sh-link-underline>
-        {{ hero?.action }}
-      </sh-link-underline>
+    <div id="hero" class="h-screen relative flex flex-col justify-center overflow-hidden">
+      <nuxt-img
+        src="/img/indonesiafood@2x.png"
+        width="534px"
+        height="749px"
+        format="webp"
+        class="hero-image absolute bottom-0 left-32"
+      />
+  
+      <div class="absolute left-[593px]">
+        <!-- class untuk font lebih baik kami configurasi di tailwind.config.js. -->
+        <h1 class="heading-1 text-85 leading-tight font-bold w-[716px]">
+          {{ hero?.heading }}
+        </h1>
+  
+        <sh-link-underline>
+          {{ hero?.action }}
+        </sh-link-underline>
+      </div>
     </div>
-  </div>
 </template>

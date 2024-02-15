@@ -9,7 +9,7 @@ const text = computed(() => {
   return s.default()[0].children
 })
 
-const base = 'text-[13px] font-bold underline underline-offset-8 cursor-pointer flex flex-col'
+const base = 'text-13 font-bold underline underline-offset-8 cursor-pointer flex flex-col'
 </script>
 
 <template>
