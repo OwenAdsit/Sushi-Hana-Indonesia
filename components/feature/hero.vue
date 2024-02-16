@@ -13,7 +13,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div id="hero" class="h-screen relative flex flex-col justify-center overflow-hidden">
+    <div id="hero" class="h-screen relative flex flex-col justify-center overflow-hidden container mx-auto">
       <nuxt-img
         src="/img/indonesiafood@2x.png"
         width="534px"
