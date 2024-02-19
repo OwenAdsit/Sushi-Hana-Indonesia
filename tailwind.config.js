@@ -28,7 +28,12 @@ export default {
     fontFamily: {
       serif: ['Cinzel', 'serif'],
     },
-    extend: {},
+    extend: {
+      fontSize: {
+        13: '13px',
+        85: '85px',
+      },
+    },
   },
   plugins: [],
 }
