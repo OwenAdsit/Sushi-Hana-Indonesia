@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { $gsap } = useNuxtApp()
-
 interface Menu { label: string, link: string }
 
 const getMenu = () => queryContent('/config/menu').find()

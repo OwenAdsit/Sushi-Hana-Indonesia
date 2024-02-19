@@ -13,8 +13,8 @@ const model = defineModel<boolean>()
 
 const carousel = ref<VNodeRef | null>(null)
 
-const activeRef = ref<Element | ComponentPublicInstance | null>(null)
-onClickOutside(activeRef, (event) => { emit('update:modelValue', false) })
+const activeRef = ref(null)
+onClickOutside(activeRef, () => { emit('update:modelValue', false) })
 
 function onAppear() {
   document.body.classList.add('overflow-hidden')
@@ -31,7 +31,7 @@ function onLeave() {
     <div v-if="model" class="fixed top-0 left-0 w-screen h-screen bg-dark/95 z-[1000] flex items-center justify-between">
       <div class="carousel-viewport w-full h-full py-10 overflow-hidden">
         <sh-carousel ref="carousel" :items-to-show="2.5" :wrap-around="true">
-          <sh-slide v-for="(img, i) in images" :key="img.name" :ref="(e) => { carousel?.data?.currentSlide.value === e?.index && (activeRef = e) }">
+          <sh-slide v-for="(img, i) in images" :key="img.name" :ref="(e) => { carousel?.data?.currentSlide.value === (e as any)?.index && ((activeRef as any) = e) }">
             <div class="carousel__item text-light transition-all duration-500 w-full h-full relative">
               <img :src="img.image || ''" class="transition-all duration-500 w-full h-full object-contain" :class="[i === carousel?.data?.currentSlide.value ? 'item--active' : 'item--inactive']">
               <span v-if="carousel" class="item-description absolute top-[52px] -right-[123px] transition-all duration-500">
