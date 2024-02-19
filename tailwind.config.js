@@ -30,7 +30,12 @@ export default {
     },
     extend: {
       fontSize: {
+        10: '10px',
         13: '13px',
+        16: '16px',
+        30: '30px',
+        35: '35px',
+        80: '80px',
         85: '85px',
       },
     },

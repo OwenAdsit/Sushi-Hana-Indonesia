@@ -5,6 +5,10 @@
 </template>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-dark font-serif text-light;
 }

@@ -6,28 +6,47 @@ interface Menu { label: string, link: string }
 const getMenu = () => queryContent('/config/menu').find()
 const { data } = await useAsyncData('menu', getMenu, { transform: v => v[0].body as unknown as Menu[] })
 
-onMounted(() => {
-  $gsap.fromTo('.navigation', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 })
+const isScrolled = ref(false)
+
+const logoSize = computed(() => {
+  return {
+    width: isScrolled.value ? '51px' : '93px',
+    height: isScrolled.value ? '52px' : '95px',
+  }
 })
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeMount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+function handleScroll() {
+  // Example: Change styles when scrolled more than 50px
+  isScrolled.value = window.scrollY > 50
+}
 </script>
+
 <template>
   <!-- header belum sesuai dengan desain XD -->
-  <div class="navigation fixed w-screen z-[900] pt-5">
-    <div class="container mx-auto p-0 flex flex-row justify-between">
-      <nuxt-img src="/img/sushi-hana-logo.svg" width="93px" height="95px" format="webp" />
+  <div class="navigation fixed w-screen z-[900] fade-in-bottom transition-all duration-500" :class="{ 'bg-dark': isScrolled, 'pt-5': !isScrolled, 'py-0': isScrolled }">
+    <div class="container mx-auto flex flex-row justify-between transition-all duration-500" :class="[isScrolled ? 'p-3' : 'p-0']">
+      <nuxt-img src="/img/sushi-hana-logo.svg" :width="logoSize.width" :height="logoSize.height" format="webp" class="transition-all duration-500" />
 
       <nav class="pt-5">
         <!-- Kalau ada class spacing tailwind yang cukup dekat, boleh dipakai, Dari pada bikin class arbitrary baru -->
         <ul class="flex flex-row gap-16">
-          <sh-link v-for="menu in data" :key="menu.label">
+          <sh-link v-for="menu in data" :key="menu.label" :to="menu.link">
             {{ menu.label }}
           </sh-link>
         </ul>
       </nav>
-    
-      <nuxt-link class="text-13 font-bold underline underline-offset-8 pt-5">
+
+      <sh-link-underline class="pt-5">
         ORDER ONLINE
-      </nuxt-link>
+      </sh-link-underline>
     </div>
   </div>
 </template>

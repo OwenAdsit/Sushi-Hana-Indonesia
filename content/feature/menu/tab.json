@@ -1,0 +1,44 @@
+{
+  "body": [
+    {
+      "label": "appetizers",
+      "desciption": "前菜",
+      "icon": "Appetizer"
+    },
+    {
+      "label": "Soups & Salads",
+      "desciption": "スープとサラダ",
+      "icon": "Soup"
+    },
+    {
+      "label": "Ramen & udon",
+      "desciption": "ラーメンとうどん",
+      "icon": "Ramen"
+    },
+    {
+      "label": "Sushis & Gunkan",
+      "desciption": "寿司と軍艦",
+      "icon": "Sushi"
+    },
+    {
+      "label": "Special Rolls",
+      "desciption": "特別なロールズ",
+      "icon": "Roll"
+    },
+    {
+      "label": "Maki",
+      "desciption": "マキ",
+      "icon": "Maki"
+    },
+    {
+      "label": "Hot Kitchen",
+      "desciption": "ホットキッチン",
+      "icon": "Hot"
+    },
+    {
+      "label": "Bento Boxes",
+      "desciption": "お弁当箱",
+      "icon": "Bento"
+    }
+  ]
+}

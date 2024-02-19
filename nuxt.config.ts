@@ -1,6 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    viewTransition: true,
+  },
+  css: [
+    '~/assets/css/animation.css',
+  ],
+  vue: {
+    propsDestructure: true,
+
+  },
   modules: [
     '@nuxt/image',
     '@nuxtjs/i18n',
@@ -8,6 +19,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@hypernym/nuxt-gsap',
+    'nuxt-icon',
   ],
 
   i18n: {
@@ -28,7 +40,10 @@ export default defineNuxtConfig({
   },
 
   gsap: {
-    // provide: false,
-    // composables: true,
+    provide: false,
+    composables: true,
+    extraPlugins: {
+      scrollTrigger: true,
+    },
   },
 })
