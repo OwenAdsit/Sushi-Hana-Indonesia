@@ -9,17 +9,23 @@ const herobg = computed(() => {
 })
 
 const selectedImg = ref<number | null>(0)
+const onModal = ref(false)
 
 const getGallery = () => queryContent('/feature/gallery').find()
 const { data: images } = await useAsyncData('hero', getGallery, { transform: v => v[0].body as unknown as ContentGallery['body'] })
+
+function onSelect(idx: number) {
+  selectedImg.value = idx
+  onModal.value = true
+}
 </script>
 
 <template>
   <div class="wrapper bg-no-repeat" :style="herobg">
     <feature-gallery-hero />
-    <feature-gallery-grid :images="images" />
+    <feature-gallery-grid :images="images" @select-image="onSelect" />
 
-    <!-- <feature-gallery-modal :images="images" :selected-img="selectedImg" @next="selectedImg = $event" /> -->
+    <feature-gallery-modal v-model="onModal" :images="images" :selected-img="selectedImg" @next="selectedImg = $event" />
   </div>
 </template>
 

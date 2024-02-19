@@ -13,22 +13,34 @@ const herobg = computed(() => {
 
 onMounted(() => {
   /**
-   * Animation for description
+   * Animation for description (uses club plugin)
    *
    */
-  useGsap.fromTo('.description', {
-    x: 100,
+  const Splitter = useSplitText
+  const desc = new Splitter('.description', {
+    type: 'lines',
+    linesClass: 'split-child',
+  })
+
+  useGsap.set('.description', { perspective: 400, opacity: 1 })
+
+  useGsap.from(desc.lines, {
+    duration: 1.5,
     opacity: 0,
-  }, {
+    scale: 1,
+    y: 50,
+    rotationX: 25,
+    rotationY: 5,
+    transformOrigin: 'bottom left -25',
+    ease: 'power4',
+    stagger: 0.15,
+    delay: 0.25,
     scrollTrigger: {
       trigger: '.wrapper-description',
       start: 'top bottom',
       end: 'bottom top',
       toggleActions: 'restart pause restart pause',
     },
-    x: 0,
-    opacity: 1,
-    duration: 1.5,
   })
 
   /**
@@ -54,19 +66,30 @@ onMounted(() => {
    * Animation for subheading
    *
    */
-  useGsap.fromTo('.subheading', {
-    x: -100,
+  const subhead = new Splitter('.subheading', {
+    type: 'lines',
+    linesClass: 'subhead-child',
+  })
+
+  useGsap.set('.subheading', { perspective: 800, opacity: 1 })
+
+  useGsap.from(subhead.lines, {
+    duration: 1.5,
     opacity: 0,
-  }, {
+    scale: 1,
+    x: 500,
+    rotationX: 25,
+    rotationY: 5,
+    transformOrigin: 'bottom left -25',
+    ease: 'power4',
+    stagger: 0.15,
+    delay: 0.25,
     scrollTrigger: {
       trigger: '.subheading',
       start: 'top bottom',
       end: 'bottom top',
       toggleActions: 'restart pause restart pause',
     },
-    x: 0,
-    opacity: 1,
-    duration: 1.5,
   })
 })
 </script>
@@ -109,7 +132,7 @@ onMounted(() => {
         class="subheading-image"
       />
 
-      <span class="subheading text-80 font-bold leading-[90px] tracking-normal absolute top-[273px] self-start w-[812px] flex">
+      <span class="subheading text-80 font-bold leading-[90px] tracking-normal absolute top-[273px] self-start w-[812px]">
         {{ hero?.subheading }}
       </span>
     </div>

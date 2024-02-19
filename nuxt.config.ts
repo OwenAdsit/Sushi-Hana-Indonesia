@@ -20,7 +20,12 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@hypernym/nuxt-gsap',
     'nuxt-icon',
+    'vue3-carousel-nuxt',
+    '@vueuse/nuxt',
   ],
+  alias: {
+    'gsap/SplitText': 'gsap-trial/SplitText',
+  },
 
   i18n: {
     locales: ['id-ID'],
@@ -45,5 +50,12 @@ export default defineNuxtConfig({
     extraPlugins: {
       scrollTrigger: true,
     },
+    clubPlugins: {
+      splitText: true,
+    },
+  },
+
+  carousel: {
+    prefix: 'Sh',
   },
 })

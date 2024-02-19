@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { VNodeRef } from 'vue'
 import type { ContentGallery } from '~/types/content'
 
 const { images, selectedImg } = defineProps<{
@@ -6,70 +7,77 @@ const { images, selectedImg } = defineProps<{
   selectedImg: number | null
 }>()
 
-const emit = defineEmits(['next'])
+// const emit = defineEmits(['update:modelValue'])
 
-const pickThree = computed(() => {
-  if (selectedImg !== null && images)
-    return [images[(selectedImg - 1 + images.length) % images.length], images[selectedImg], images[(selectedImg + 1) % images.length]]
-  return []
-})
+const model = defineModel<boolean>()
 
-function onNext() {
-  // add animation that make pickthree[1] slide over to left and pickthree[2] slide over to left become active
-  emit('next', (selectedImg! + 1) % images!.length)
-  // useGsap.from('.box:nth-of-type(2)', { x: 500, scale: 1, duration: 0.5 })
-  // useGsap.from('.box:nth-of-type(3)', { x: 500, duration: 0.5, scale: 1 })
-}
+const carousel = ref<VNodeRef | null>(null)
 
-function onComponentLeave(el: Element, done: () => void) {
-  const w = Number(useGsap.getProperty(el, 'width'))
-  useGsap.to(el, { x: -w, scale: 0.5, duration: 1, onComplete: done })
-}
+const activeRef = ref<Element | ComponentPublicInstance | null>(null)
+// onClickOutside(activeRef, (event) => { emit('update:modelValue', false) })
 
-function onComponentEnter(el: Element, done: () => void) {
-  const w = useGsap.getProperty('.box:nth-of-type(3)', 'x')
-  useGsap.to(el, { x: 300, scale: 1, duration: 1, onComplete: done })
-  // const x = useGsap.getProperty('.box:nth-of-type(1)', 'x')
-  useGsap.to('.box:nth-of-type(2)', { x: -400, scale: 1, duration: 1 })
+function onAppear() {
+  document.body.classList.add('overflow-hidden')
+  carousel.value.slideTo(selectedImg)
 }
 </script>
 
 <template>
-  <div class="absolute top-0 left-0 w-screen h-screen bg-dark/95 z-[1000] overflow-hidden">
-    <div class="carousel-viewport w-full h-screen flex flex-row items-center justify-between">
-      <transition-group :css="false" @leave="onComponentLeave" @enter="onComponentEnter">
-        <div v-for="(image, i) in pickThree" :key="image.name" class="box shrink-0" :class="{ active: i === 1 }">
-          <img :src="image.image || ''" class="object-scale-down">
-        </div>
-      </transition-group>
-    </div>
+  <Transition name="slide-fade" @enter="onAppear">
+    <div v-if="model" class="fixed top-0 left-0 w-screen h-screen bg-dark/95 z-[1000] flex items-center justify-between">
+      <div class="carousel-viewport w-full h-full py-10 overflow-hidden">
+        <sh-carousel ref="carousel" :items-to-show="2.5" :wrap-around="true">
+          <sh-slide v-for="(img, i) in images" :key="img.name" :ref="(e) => { carousel?.data?.currentSlide.value === e.index && (activeRef = e) }">
+            <div class="carousel__item text-light transition-all duration-500 w-full h-full relative">
+              <img :src="img.image || ''" class="transition-all duration-500 w-full h-full object-contain" :class="[i === carousel?.data?.currentSlide.value ? 'item--active' : 'item--inactive']">
+              <span v-if="carousel" class="item-description absolute top-[52px] -right-[123px] transition-all duration-500">
+                {{ carousel.data?.currentSlide.value }} / {{ carousel.data?.slidesCount.value }}
+              </span>
 
-    <div class="absolute top-0 right-0" @click="onNext">
-      <button>
-        Next {{ (selectedImg! + 1) % images!.length }} {{ selectedImg }}
-      </button>
+              <div class="item-nav-next absolute bottom-[40px] -right-[20px] cursor-pointer z-[1005] p-4 transition-all duration-500 origin-left hover:scale-x-125" @click="carousel?.next()">
+                <nuxt-img src="/icon/arrow-right.png" format="webp" width="32px" height="12px" class="" />
+              </div>
+            </div>
+          </sh-slide>
+
+          <template #addons>
+            <!-- <sh-navigation /> -->
+            <div class="">
+              <input type="text">
+            </div>
+          </template>
+        </sh-carousel>
+      </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
-<style>
-/* .carousel-viewport {
-  transform: translateX(-150px);
-} */
-
-.box {
-  height: 40vh;
-  overflow: hidden;
-  aspect-ratio: 9/16;
-  /* transition: all 0.5s ease; */
+<style scoped>
+.carousel {
+  height: 100%;
 }
 
-/* .active {
-  view-transition-name: active;
-  transition-duration: 500ms;
-} */
+:deep(.carousel__viewport), :deep(.carousel__track) {
+  height: 100%;
+}
 
-.box:nth-of-type(2) {
-  transform: scale(2.2);
+.item--inactive {
+  transform: scale(0.5);
+  opacity: 0.3;
+}
+
+.item-description::before {
+  content: '';
+  width: 100px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  left: -120px;
+  top: 10px
+}
+
+.item--inactive+.item-description, .item--inactive ~ .item-nav-next {
+  opacity: 0;
+  scale: 0;
 }
 </style>

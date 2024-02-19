@@ -4,12 +4,16 @@ import type { ContentGallery } from '~/types/content'
 const { images } = defineProps<{
   images: ContentGallery['body'] | null
 }>()
+
+defineEmits<{
+  (e: 'selectImage', i: number): void
+}>()
 </script>
 
 <template>
   <div id="image-grid" class="container mx-auto">
     <div v-if="images" class="grid grid-cols-3 gap-16">
-      <div v-for="image in images" :key="image.name" class="group overflow-hidden cursor-pointer relative">
+      <div v-for="(image, i) in images" :key="image.name" class="group overflow-hidden cursor-pointer relative" @click="$emit('selectImage', i)">
         <!-- format="webp"
         width="362px"
         height="533px" -->
