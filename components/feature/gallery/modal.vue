@@ -7,31 +7,35 @@ const { images, selectedImg } = defineProps<{
   selectedImg: number | null
 }>()
 
-// const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue'])
 
 const model = defineModel<boolean>()
 
 const carousel = ref<VNodeRef | null>(null)
 
 const activeRef = ref<Element | ComponentPublicInstance | null>(null)
-// onClickOutside(activeRef, (event) => { emit('update:modelValue', false) })
+onClickOutside(activeRef, (event) => { emit('update:modelValue', false) })
 
 function onAppear() {
   document.body.classList.add('overflow-hidden')
   carousel.value.slideTo(selectedImg)
 }
+
+function onLeave() {
+  document.body.classList.remove('overflow-hidden')
+}
 </script>
 
 <template>
-  <Transition name="slide-fade" @enter="onAppear">
+  <Transition name="slide-fade" @enter="onAppear" @leave="onLeave">
     <div v-if="model" class="fixed top-0 left-0 w-screen h-screen bg-dark/95 z-[1000] flex items-center justify-between">
       <div class="carousel-viewport w-full h-full py-10 overflow-hidden">
         <sh-carousel ref="carousel" :items-to-show="2.5" :wrap-around="true">
-          <sh-slide v-for="(img, i) in images" :key="img.name" :ref="(e) => { carousel?.data?.currentSlide.value === e.index && (activeRef = e) }">
+          <sh-slide v-for="(img, i) in images" :key="img.name" :ref="(e) => { carousel?.data?.currentSlide.value === e?.index && (activeRef = e) }">
             <div class="carousel__item text-light transition-all duration-500 w-full h-full relative">
               <img :src="img.image || ''" class="transition-all duration-500 w-full h-full object-contain" :class="[i === carousel?.data?.currentSlide.value ? 'item--active' : 'item--inactive']">
               <span v-if="carousel" class="item-description absolute top-[52px] -right-[123px] transition-all duration-500">
-                {{ carousel.data?.currentSlide.value }} / {{ carousel.data?.slidesCount.value }}
+                {{ carousel.data?.currentSlide.value + 1 }} / {{ carousel.data?.slidesCount.value }}
               </span>
 
               <div class="item-nav-next absolute bottom-[40px] -right-[20px] cursor-pointer z-[1005] p-4 transition-all duration-500 origin-left hover:scale-x-125" @click="carousel?.next()">
@@ -39,13 +43,6 @@ function onAppear() {
               </div>
             </div>
           </sh-slide>
-
-          <template #addons>
-            <!-- <sh-navigation /> -->
-            <div class="">
-              <input type="text">
-            </div>
-          </template>
         </sh-carousel>
       </div>
     </div>
