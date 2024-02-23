@@ -19,10 +19,10 @@ defineEmits<{
         height="533px" -->
         <img
           :src="image.image"
-          class="object-center object-cover w-[362px]"
+          class="object-center object-cover w-full"
         >
 
-        <div class="absolute bg-dark/30 top-0 left-0 py-11 px-7 w-full h-0 group-hover:h-full opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div class="absolute bg-dark/30 top-0 left-0 py-11 px-7 box-border w-full h-0 group-hover:h-full opacity-0 group-hover:opacity-100 transition-all duration-300">
           <div class="bg-dark w-full h-full flex justify-center items-center">
             <icon name="material-symbols:add-rounded" size="47px" class="scale-0 group-hover:scale-100 transition-all duration-300 delay-200" />
           </div>
