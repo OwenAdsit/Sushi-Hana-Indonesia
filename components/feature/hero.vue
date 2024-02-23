@@ -39,7 +39,7 @@ onMounted(() => {
       trigger: '.wrapper-description',
       start: 'top bottom',
       end: 'bottom top',
-      toggleActions: 'restart pause restart pause',
+      toggleActions: 'play none none none',
     },
   })
 
@@ -55,7 +55,7 @@ onMounted(() => {
       trigger: '.subheading-image',
       start: 'top bottom',
       end: 'bottom top',
-      toggleActions: 'restart pause restart pause',
+      toggleActions: 'play none none none',
     },
     x: 0,
     opacity: 1,
@@ -88,7 +88,7 @@ onMounted(() => {
       trigger: '.subheading',
       start: 'top bottom',
       end: 'bottom top',
-      toggleActions: 'restart pause restart pause',
+      toggleActions: 'play none none none',
     },
   })
 })
@@ -132,7 +132,7 @@ onMounted(() => {
         class="subheading-image"
       />
 
-      <span class="subheading text-80 font-bold leading-[90px] tracking-normal absolute top-[273px] self-start w-[812px]">
+      <span class="subheading text-80 font-bold leading-tight tracking-normal absolute top-[273px] self-start w-[812px]">
         {{ hero?.subheading }}
       </span>
     </div>
