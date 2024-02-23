@@ -107,7 +107,7 @@ onMounted(() => {
 
       <div class="absolute left-[593px]">
         <!-- class untuk font lebih baik kami configurasi di tailwind.config.js. -->
-        <h1 class="heading-1 text-85 leading-tight font-bold w-[716px] fade-in-left">
+        <h1 class="heading-1 display-1 w-[716px] fade-in-left">
           {{ hero?.heading }}
         </h1>
 
@@ -118,7 +118,7 @@ onMounted(() => {
     </div>
 
     <div class="wrapper-description container mx-auto mt-[320px] flex justify-center items-center">
-      <span class="description text-35 leading-snug w-[732px] text-center">
+      <span class="description display-3 w-[732px] text-center">
         {{ hero?.description }}
       </span>
     </div>
@@ -132,7 +132,7 @@ onMounted(() => {
         class="subheading-image"
       />
 
-      <span class="subheading text-80 font-bold leading-tight tracking-normal absolute top-[273px] self-start w-[812px]">
+      <span class="subheading display-2 absolute top-[273px] self-start w-[812px]">
         {{ hero?.subheading }}
       </span>
     </div>
