@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="text-[30px] font-bold flex flex-col w-full justify-center items-center">
+    <div class="display-4 font-bold flex flex-col w-full justify-center items-center">
       <span>THE APPETIZERS</span>
       <span>前菜</span>
     </div>
@@ -11,13 +11,13 @@
         <nuxt-img src="/img/menu/appetizer-1@2x.png" format="webp" width="152px" height="160px" />
       </div>
 
-      <div class="ml-28 text-primary text-16 font-bold flex flex-col gap-6">
+      <div class="ml-28 menu__item-title flex flex-col gap-6">
         <div class="flex flex-row gap-9">
           <span>1</span>
 
           <div class="flex flex-col gap-3">
             <span>CAWAN MUSHI SEAFOOD</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-52">
+            <p class="leading-normal text-dark font-normal w-52">
               Steamed Egg With Chicken, Shrimp, Salmon, And Narudo
             </p>
           </div>
@@ -28,20 +28,20 @@
 
           <div class="flex flex-col gap-3">
             <span>CAWAN MUSHI</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-52">
+            <p class="leading-normal text-dark font-normal w-52">
               Steamed Egg With Chicken, And Shrimp
             </p>
           </div>
         </div>
       </div>
 
-      <div class="ml-36 text-primary text-16 font-bold flex flex-col gap-6">
+      <div class="ml-36 menu__item-title flex flex-col gap-6">
         <div class="flex flex-row gap-9">
           <span>3</span>
 
           <div class="flex flex-col gap-3">
             <span>AGEDASHI TOFU</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-52">
+            <p class="leading-normal text-dark font-normal w-52">
               Fried Tofu With Nori Bonito With Special Sauce
             </p>
           </div>
@@ -71,13 +71,13 @@
     </div>
 
     <div class="mt-16 flex flex-row items-center">
-      <div class="ml-11 text-primary text-16 font-bold flex flex-col gap-6">
+      <div class="ml-11 menu__item-title flex flex-col gap-6">
         <div class="flex flex-row gap-9">
           <span>6</span>
 
           <div class="flex flex-col gap-3">
             <span>CALAMARI</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-52">
+            <p class="leading-normal text-dark font-normal w-52">
               Deep Fried Special Squid
             </p>
           </div>
@@ -88,7 +88,7 @@
 
           <div class="flex flex-col gap-3">
             <span>EDAMAME</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-52">
+            <p class="leading-normal text-dark font-normal w-52">
               Steamed Whole Soy Beans
             </p>
           </div>
@@ -99,20 +99,20 @@
 
           <div class="flex flex-col gap-3">
             <span>BAKED SALMON</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-[148px]">
+            <p class="leading-normal text-dark font-normal w-[148px]">
               Baked Fresh Salmon With Snow Crab
             </p>
           </div>
         </div>
       </div>
 
-      <div class="ml-[138px] text-primary text-16 font-bold flex flex-col gap-6">
+      <div class="ml-[138px] menu__item-title flex flex-col gap-6">
         <div class="flex flex-row gap-9">
           <span>9</span>
 
           <div class="flex flex-col gap-3">
             <span>TORI SEAFOOD</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-[254px]">
+            <p class="leading-normal text-dark font-normal w-[254px]">
               Grilled Salmon, Tuna, Squid, Shrimp, Served With Yakitori Sauce
             </p>
           </div>
@@ -123,7 +123,7 @@
 
           <div class="flex flex-col gap-3">
             <span>YAKITORI</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-52">
+            <p class="leading-normal text-dark font-normal w-52">
               Grilled Chicken Skewered Served With Yakitori Sauce
             </p>
           </div>
@@ -134,20 +134,20 @@
 
           <div class="flex flex-col gap-3">
             <span>MIXED TEMPURA</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-52">
+            <p class="leading-normal text-dark font-normal w-52">
               2 Shrimps, 3 Vegetables
             </p>
           </div>
         </div>
       </div>
 
-      <div class="self-stretch w-full ml-[138px] text-primary text-16 font-bold flex flex-col justify-between pr-12">
+      <div class="self-stretch w-full ml-[138px] menu__item-title flex flex-col justify-between pr-12">
         <div class="flex flex-row gap-9">
           <span>12</span>
 
           <div class="flex flex-col gap-3">
             <span>GYOZA / DUMPLING</span>
-            <p class="text-13 leading-[20px] text-dark font-normal w-[254px]">
+            <p class="leading-normal text-dark font-normal w-[254px]">
               Pan Fried Seafood Dumpling
             </p>
           </div>

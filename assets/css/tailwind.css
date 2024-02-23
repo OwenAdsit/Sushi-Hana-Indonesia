@@ -25,6 +25,6 @@
         @apply text-20 sm:text-25 xl:text-30
     }
     .menu__item-title {
-        @apply text-14 sm:text-16
+        @apply text-14 text-primary sm:text-16 font-bold
     }
 }
