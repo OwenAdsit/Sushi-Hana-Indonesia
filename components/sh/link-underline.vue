@@ -11,35 +11,19 @@ const text = computed(() => {
 
 const onHover = ref(false)
 
-const base = 'text-13 font-bold underline underline-offset-8 cursor-pointer flex flex-col transition-all flex'
-const hover = 'hover:text-primary'
+const base = 'group text-13 font-bold cursor-pointer flex flex-col transition-all duration-300 flex relative w-fit'
+const underline = 'after:block after:border-b after:border-light after:transition-transform after:ease-in-out after:duration-300 hover:after:border-primary'
 </script>
 
 <template>
-  <nuxt-link :data-replace="text" :class="[base, hover]" @mouseenter="onHover = true" @mouseleave="onHover = false">
-    <Transition name="slide-fade" mode="out-in">
-      <span v-if="onHover">
+  <nuxt-link :class="[base, underline]" @mouseenter="onHover = true" @mouseleave="onHover = false">
+    <div class="flex flex-col h-[22px] transition-all overflow-hidden">
+      <span class="transition-all duration-300 group-hover:translate-y-[-20px]">
         <slot />
       </span>
-      <span v-else>
+      <span class="transition-all duration-300 group-hover:translate-y-[-20px] text-primary">
         {{ text }}
       </span>
-    </Transition>
+    </div>
   </nuxt-link>
 </template>
-
-<style>
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateY(-10px);
-  opacity: 0;
-}
-</style>

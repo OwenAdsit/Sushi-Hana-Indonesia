@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const base = 'hs-link text-13 font-bold cursor-pointer transition-all'
+const base = 'hs-link text-13 font-bold cursor-pointer transition-all duration-300'
 const underline = 'after:block after:border-b after:border-primary after:scale-x-0 after:transition-transform after:ease-in-out'
 const textHover = 'hover:text-primary'
 const underlineHover = 'hover:after:scale-x-100 after:origin-left'
