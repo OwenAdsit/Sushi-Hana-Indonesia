@@ -111,7 +111,7 @@ onMounted(() => {
           {{ hero?.heading }}
         </h1>
 
-        <sh-link-underline class="action swing-in-top-bck">
+        <sh-link-underline class="action fade-in-top">
           {{ hero?.action }}
         </sh-link-underline>
       </div>
@@ -151,5 +151,75 @@ onMounted(() => {
 
 .action {
   animation-delay: 1s;
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-top {
+	-webkit-animation: fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation-delay: 0.5s;
+}/**
+ * ----------------------------------------
+ * animation fade-in-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-top {
+	-webkit-animation: fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-top 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation-delay: 0.7s;
 }
 </style>

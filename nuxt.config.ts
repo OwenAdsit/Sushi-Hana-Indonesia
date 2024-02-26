@@ -1,9 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
-    viewTransition: true,
+    layoutTransition: { name: 'rotate', mode: 'default' },
   },
   css: [
     '~/assets/css/animation.css',
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
     propsDestructure: true,
 
   },
+
   modules: [
     '@nuxt/image',
     '@nuxtjs/i18n',

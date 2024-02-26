@@ -53,6 +53,78 @@
       "image": "/img/gallery/image-9@2x.png",
       "alt": "image 9",
       "caption": "image 9"
+    },
+    {
+      "name": "image 10",
+      "image": "/img/gallery/image-10@2x.png",
+      "alt": "image 10",
+      "caption": "image 10"
+    },
+    {
+      "name": "image 11",
+      "image": "/img/sushi-hana-logo.svg",
+      "alt": "image 11",
+      "caption": "image 11"
+    },
+    {
+      "name": "image 12",
+      "image": "/img/gallery/image-12@2x.png",
+      "alt": "image 12",
+      "caption": "image 12"
+    },
+    {
+      "name": "image 13",
+      "image": "/img/gallery/image-13@2x.png",
+      "alt": "image 13",
+      "caption": "image 13"
+    },
+    {
+      "name": "image 14",
+      "image": "/img/gallery/image-14@2x.png",
+      "alt": "image 14",
+      "caption": "image 14"
+    },
+    {
+      "name": "image 15",
+      "image": "/img/gallery/image-15@2x.png",
+      "alt": "image 15",
+      "caption": "image 15"
+    },
+    {
+      "name": "image 16",
+      "image": "/img/gallery/image-16@2x.png",
+      "alt": "image 16",
+      "caption": "image 16"
+    },
+    {
+      "name": "image 17",
+      "image": "/img/gallery/image-17@2x.png",
+      "alt": "image 17",
+      "caption": "image 17"
+    },
+    {
+      "name": "image 18",
+      "image": "/img/gallery/image-18@2x.png",
+      "alt": "image 18",
+      "caption": "image 18"
+    },
+    {
+      "name": "image 19",
+      "image": "/img/gallery/image-19@2x.png",
+      "alt": "image 19",
+      "caption": "image 19"
+    },
+    {
+      "name": "image 20",
+      "image": "/img/gallery/image-20@2x.png",
+      "alt": "image 20",
+      "caption": "image 20"
+    },
+    {
+      "name": "image 21",
+      "image": "/img/gallery/image-21@2x.png",
+      "alt": "image 21",
+      "caption": "image 21"
     }
   ]
 }

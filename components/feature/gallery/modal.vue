@@ -44,7 +44,6 @@ function onLeave() {
               <div v-if="i !== 0" class="item-nav-prev absolute bottom-[40px] -scale-x-100 left-[42px] cursor-pointer z-[1005] p-4 transition-all duration-500 origin-left hover:-scale-x-125" @click="carousel?.prev()">
                 <nuxt-img src="/icon/arrow-right.png" format="webp" width="32px" height="12px" class="" />
               </div>
-
             </div>
           </sh-slide>
         </sh-carousel>

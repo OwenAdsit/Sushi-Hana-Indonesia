@@ -26,6 +26,12 @@ function onSelect(idx: number) {
     <feature-gallery-grid :images="images" @select-image="onSelect" />
 
     <feature-gallery-modal v-model="onModal" :images="images" :selected-img="selectedImg" @next="selectedImg = $event" />
+
+    <div class="container mx-auto p-0">
+      <svg width="100%" height="60" viewBox="0 0 100 20" preserveAspectRatio="none" class="my-24">
+        <line x1="0" y1="10" x2="100" y2="10" stroke="dimgray" stroke-width=".5" stroke-dasharray="1.5 , 1" />
+      </svg>
+    </div>
   </div>
 </template>
 
