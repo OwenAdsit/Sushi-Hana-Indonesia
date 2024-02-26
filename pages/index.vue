@@ -7,6 +7,6 @@ definePageMeta({
 <template>
   <div>
     <feature-hero />
-    <feature-menu />
+    <!-- <feature-menu /> -->
   </div>
 </template>

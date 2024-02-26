@@ -96,18 +96,24 @@ onMounted(() => {
 
 <template>
   <div id="hero" class="bg-no-repeat" :style="herobg">
-    <div class="h-screen relative flex flex-col justify-center overflow-hidden container mx-auto">
+    <div class="h-screen relative flex flex-col justify-center container mx-auto p-0 overflow-hidden">
       <nuxt-img
-        src="/img/indonesiafood@2x.png"
-        width="534px"
-        height="749px"
+        src="/img/hero/hero-1-desktop.png"
+        srcset="/img/hero/hero-1-mobile.png 767w,
+          /img/hero/hero-1-mobile@2x.png 767w 2x,
+          /img/hero/hero-1-ipad.png 1023w,
+          /img/hero/hero-1-ipad@2x.png 1023w 2x,
+          /img/hero/hero-1-desktop@2x.png 2x"
+        sizes="(max-width: 767px) 767px, (max-width: 1023px) 1023px, 100vw"
         format="webp"
-        class="hero-image absolute bottom-0 left-32 fade-in-bottom"
+        fit="cover"
+        class="hero-image absolute h-[65.64vh] md:h-[83.008vh] lg:h-[85vh] w-[325px] md:w-[436px] lg:w-auto bottom-0 max-md:-right-10 lg:left-[5.5vw] fade-in-bottom"
+        alt="hero image"
       />
 
-      <div class="absolute left-[593px]">
+      <div class="top-[190px] md:top-[unset] absolute left-5 md:left-[37.5vw] 2xl:left-[30.5vw]">
         <!-- class untuk font lebih baik kami configurasi di tailwind.config.js. -->
-        <h1 class="heading-1 display-1 w-[716px] fade-in-left">
+        <h1 class="heading-1 display-1 w-[400px] lg:w-[716px] fade-in-left">
           {{ hero?.heading }}
         </h1>
 
@@ -123,16 +129,14 @@ onMounted(() => {
       </span>
     </div>
 
-    <div class="wrapper-subheading container mx-auto mt-[196px] flex flex-col items-end pl-0 relative pb-[183px]">
+    <div class="wrapper-subheading container mx-auto mt-[196px] flex flex-col items-center md:items-end  relative pb-[183px]">
       <nuxt-img
         src="/img/foodsurabaya@2x.png"
-        width="632px"
-        height="716px"
         format="webp"
-        class="subheading-image"
+        class="subheading-image w-[352px] h-[421px] md:w-[342px] md:h-[453px] lg:w-[632px] lg:h-[716px]"
       />
 
-      <span class="subheading display-2 absolute top-[273px] self-start w-[812px]">
+      <span class="subheading display-2 md:absolute md:top-[20vh] lg:top-[26.66vh] md:self-start w-[318px] md:w-[456px] lg:w-[812px]">
         {{ hero?.subheading }}
       </span>
     </div>
