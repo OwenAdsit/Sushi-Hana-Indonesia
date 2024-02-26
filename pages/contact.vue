@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto">
-    <div class="h-screen flex items-end relative">
-      <nuxt-img src="/img/contact-image@2x.png" width="546px" height="767px" class="absolute bottom-0 right-0" />
+    <div class="h-screen flex items-end relative mt-14 md:mt-0">
+      <nuxt-img src="/img/contact-image@2x.png" width="546px" height="767px" class="hidden md:block absolute bottom-0 right-0" />
       <div class="">
         <div class="flex flex-row items-center gap-4">
           <nuxt-img src="/img/Path-365.png" format="webp" width="31px" height="26px" class="fade-in-bottom shrink-0" />
@@ -10,11 +10,11 @@
           </h1>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-28 gap-y-14 mt-14 w-5/6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-28 gap-y-14 mt-14 w-full md:w-5/6">
           <sh-input placeholder="Name" />
           <sh-input placeholder="Email" />
           <sh-input placeholder="Subject" />
-          <sh-textarea placeholder="Message" class="col-span-2" />
+          <sh-textarea placeholder="Message" class="md:col-span-2" />
 
           <button type="submit">
             <sh-link-underline>SUBMIT</sh-link-underline>

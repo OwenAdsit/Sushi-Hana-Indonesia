@@ -84,7 +84,7 @@ const footerLink = computed(() => {
           {{ link }}
         </span>
       </div>
-      <span>
+      <span class="px-3">
         Website by Two Moons Studio
       </span>
     </div>

@@ -20,14 +20,27 @@ body {
  100% { clip-path: circle(150%); }
 }
 
-.rotate-enter-active {
-  @apply bg-light/10;
-  transition: all 1.5s ease-in-out;
-  animation-name: anim;
-  animation-duration: 1.5s;
+@keyframes animout {
+ 0% { clip-path: circle(150%); }
+ 100% { clip-path: circle(0% at right top); }
 }
 
-.rotate-enter-to {
+.rotate-leave-active {
+  @apply bg-dark/10;
+  transition: all 1s ease-in-out;
+  animation-name: animout;
+  animation-duration: 1s;
+}
+
+.rotate-enter-active {
+  @apply bg-light/10;
+  transition: all 1s ease-in-out;
+  animation-name: anim;
+  animation-duration: 1s;
+}
+
+.rotate-enter-to,
+.rotate-leave-from {
   @apply bg-dark;
 }
 </style>
