@@ -34,11 +34,11 @@ function onSwitchTab(i: number) {
 
 <template>
   <div id="menu" class="bg-light py-[95px] text-dark">
-    <div class="container mx-auto p-0 w-full flex flex-row justify-between">
+    <div class="container mx-auto  w-full max-w-full overflow-scroll flex flex-row justify-between gap-10">
       <div
         v-for="(tab, i) in tabs"
         :key="tab.label"
-        class="flex flex-col items-center cursor-pointer transition-all"
+        class="flex flex-col items-center cursor-pointer transition-all shrink-0"
         :class="{ 'text-primary': activeTab === i, 'opacity-40 hover:opacity-70': activeTab !== i }"
         @click="onSwitchTab(i)"
       >

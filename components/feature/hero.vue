@@ -97,19 +97,15 @@ onMounted(() => {
 <template>
   <div id="hero" class="bg-no-repeat" :style="herobg">
     <div class="h-screen relative flex flex-col justify-center container mx-auto p-0 overflow-hidden">
-      <nuxt-img
-        src="/img/hero/hero-1-desktop.png"
-        srcset="/img/hero/hero-1-mobile.png 767w,
-          /img/hero/hero-1-mobile@2x.png 767w 2x,
-          /img/hero/hero-1-ipad.png 1023w,
-          /img/hero/hero-1-ipad@2x.png 1023w 2x,
-          /img/hero/hero-1-desktop@2x.png 2x"
-        sizes="(max-width: 767px) 767px, (max-width: 1023px) 1023px, 100vw"
-        format="webp"
-        fit="cover"
-        class="hero-image absolute h-[65.64vh] md:h-[83.008vh] lg:h-[85vh] w-[325px] md:w-[436px] lg:w-auto bottom-0 max-md:-right-10 lg:left-[5.5vw] fade-in-bottom"
-        alt="hero image"
-      />
+      <picture class="hero-image absolute h-[65.64vh] md:h-[83.008vh] lg:h-[85vh] w-[325px] md:w-[436px] lg:w-auto bottom-0 max-md:-right-10 lg:left-[5.5vw] fade-in-bottom">
+        <source media="(min-width: 1024px)" srcset="/img/hero/hero-1-desktop.png 1x, /img/hero/hero-1-desktop@2x.png 2x" class="h-full">
+
+        <source media="(min-width: 768px) and (max-width: 1023px)" srcset="/img/hero/hero-1-ipad.png 1x, /img/hero/hero-1-ipad@2x.png 2x" class="h-full">
+
+        <source media="(max-width: 768px)" srcset="/img/hero/hero-1-mobile@2x.png 2x" class="h-full">
+
+        <img src="/img/hero/hero-1-mobile.png" alt="Hero Image" class="h-full">
+      </picture>
 
       <div class="top-[190px] md:top-[unset] absolute left-5 md:left-[37.5vw] 2xl:left-[30.5vw]">
         <!-- class untuk font lebih baik kami configurasi di tailwind.config.js. -->
