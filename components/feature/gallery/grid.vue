@@ -34,7 +34,7 @@ onMounted(() => {
 
 <template>
   <div id="image-grid" class="container mx-auto">
-    <div v-if="images" class="gallery__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+    <div v-if="images" class="gallery__wrapper grid grid-cols-2 gap-4 lg:grid-cols-3 sm:gap-16">
       <div v-for="(image, i) in images" :key="image.name" class="gallery__item group overflow-hidden cursor-pointer relative w-full h-full flex items-center justify-center" @click="$emit('selectImage', i)">
         <!-- format="webp"
         width="362px"
