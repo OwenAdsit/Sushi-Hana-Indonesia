@@ -35,6 +35,7 @@ function onSwitchTab(i: number) {
 <template>
   <div id="menu" class="bg-light py-[95px] text-dark">
     <div class="container mx-auto  w-full max-w-full overflow-scroll flex flex-row justify-between gap-10">
+      <!-- Minta tolong pakai slider JS disini. Supaya tidak bisa lihat scrollbarnya -->
       <div
         v-for="(tab, i) in tabs"
         :key="tab.label"
