@@ -132,7 +132,7 @@ onMounted(() => {
         class="subheading-image w-[352px] h-[421px] md:w-[342px] md:h-[453px] lg:w-[632px] lg:h-[716px]"
       />
 
-      <span class="subheading display-2 md:absolute md:top-[20vh] lg:top-[26.66vh] md:self-start w-[318px] md:w-[456px] lg:w-[812px]">
+      <span class="subheading display-2 text-center relative -top-[.8em] md:text-left md:absolute md:top-[20vh] lg:top-[26.66vh] md:self-start w-[318px] md:w-[456px] lg:w-[812px]">
         {{ hero?.subheading }}
       </span>
     </div>
