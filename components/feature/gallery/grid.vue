@@ -35,13 +35,13 @@ onMounted(() => {
 <template>
   <div id="image-grid" class="container mx-auto">
     <div v-if="images" class="gallery__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-      <div v-for="(image, i) in images" :key="image.name" class="gallery__item group overflow-hidden cursor-pointer relative" @click="$emit('selectImage', i)">
+      <div v-for="(image, i) in images" :key="image.name" class="gallery__item group overflow-hidden cursor-pointer relative w-full h-full flex items-center justify-center" @click="$emit('selectImage', i)">
         <!-- format="webp"
         width="362px"
         height="533px" -->
         <img
           :src="image.image"
-          class="gallery__image object-center object-cover w-full"
+          class="gallery__image object-center object-cover"
         >
 
         <div class="absolute bg-dark/30 top-0 left-0 py-11 px-7 box-border w-full h-0 group-hover:h-full opacity-0 group-hover:opacity-100 transition-all duration-300">
