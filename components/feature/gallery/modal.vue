@@ -19,9 +19,10 @@ function closeCarousel() {
   emit('update:modelValue', false)
 }
 
-function onAppear() {
+function onAppear(el: HTMLElement, done: any) {
   document.body.classList.add('overflow-hidden')
   carousel.value.slideTo(selectedImg)
+  useGsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.45, onComplete: done })
 }
 
 function onLeave() {
