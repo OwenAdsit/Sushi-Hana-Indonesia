@@ -108,7 +108,6 @@ onMounted(() => {
       </picture>
 
       <div class="top-[190px] md:top-[unset] absolute left-5 md:left-[37.5vw] 2xl:left-[30.5vw]">
-        <!-- class untuk font lebih baik kami configurasi di tailwind.config.js. -->
         <h1 class="heading-1 display-1 w-[400px] lg:w-[716px] fade-in-left">
           {{ hero?.heading }}
         </h1>
