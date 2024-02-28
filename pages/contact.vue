@@ -1,7 +1,14 @@
 <template>
   <div class="container mx-auto">
-    <div class="h-screen flex items-end relative mt-14 md:mt-0">
-      <nuxt-img src="/img/contact-image@2x.png" width="546px" height="767px" class="hidden md:block absolute bottom-0 right-0" />
+    <div class="h-screen flex items-end lg:relative mt-14 md:mt-0">
+      <picture class="hidden md:block absolute bottom-0 right-0">
+        <source media="(min-width: 1024px)" srcset="/img/contact-image.png 1x, /img/contact-image@2x.png 2x" class="w-[546px] h-[767px]">
+
+        <source media="(min-width: 768px) and (max-width: 1023px)" srcset="/img/contact-image-ipad@2x.png 2x" class="w-[436px] h-[847px]">
+
+        <img src="/img/contact-image-ipad.png" alt="Hero Image">
+      </picture>
+      <!-- <nuxt-img src="/img/contact-image@2x.png" width="546px" height="767px" class="hidden md:block absolute bottom-0 right-0" /> -->
       <div class="">
         <div class="flex flex-row items-center gap-4">
           <nuxt-img src="/img/Path-365.png" format="webp" width="31px" height="26px" class="fade-in-bottom shrink-0" />
@@ -10,11 +17,11 @@
           </h1>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-28 gap-y-14 mt-14 w-full md:w-5/6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-28 gap-y-14 mt-14 w-full md:w-1/2 lg:w-2/3 lg:pr-10">
           <sh-input placeholder="Name" />
           <sh-input placeholder="Email" />
           <sh-input placeholder="Subject" />
-          <sh-textarea placeholder="Message" class="md:col-span-2" />
+          <sh-textarea placeholder="Message" class="lg:col-span-2" />
 
           <button type="submit">
             <sh-link-underline>SUBMIT</sh-link-underline>
@@ -23,10 +30,10 @@
 
         <div class="mt-28 flex flex-col gap-3">
           <span class="font-bold">Opening Times</span>
-          <div class="flex flex-row">
+          <div class="flex flex-row flex-wrap w-2/3 md:w-1/2 lg:w-full items-start">
             <span>Tuesday - Sunday</span>
             <span class="ml-5">11:30am - 8pm</span>
-            <span class="ml-14">Monday</span>
+            <span class="lg:ml-14">Monday</span>
             <span class="ml-5">Closed</span>
           </div>
         </div>
