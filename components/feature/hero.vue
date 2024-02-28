@@ -22,6 +22,8 @@ onMounted(() => {
     linesClass: 'split-child',
   })
 
+  window.addEventListener('resize', () => desc.revert())
+
   useGsap.set('.description', { perspective: 400, opacity: 1 })
 
   useGsap.from(desc.lines, {
