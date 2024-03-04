@@ -1,10 +1,5 @@
 <template>
-  <div class="flex flex-col w-full">
-    <div class="text-[30px] font-bold flex flex-col w-full justify-center items-center">
-      <span>THE RAMEN & UDON</span>
-      <span>ラーメンとうどん</span>
-    </div>
-
+  <div class="hidden lg:block">
     <div class="mt-16 flex flex-row justify-between">
       <div class="flex flex-row gap-14 items-start">
         <div>

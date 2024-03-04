@@ -27,6 +27,7 @@
     "@vueuse/core": "^10.7.2",
     "@vueuse/nuxt": "^10.7.2",
     "eslint": "^8.56.0",
-    "nuxt-icon": "^0.6.8"
+    "nuxt-icon": "^0.6.8",
+    "typescript": "^5.3.3"
   }
 }

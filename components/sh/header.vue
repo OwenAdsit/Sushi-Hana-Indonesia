@@ -1,8 +1,22 @@
 <script setup lang="ts">
-interface Menu { label: string, link: string }
-
-const getMenu = () => queryContent('/config/menu').find()
-const { data } = await useAsyncData('menu', getMenu, { transform: v => v[0].body as unknown as Menu[] })
+const data = [
+  {
+    label: 'HOME',
+    link: '/',
+  },
+  {
+    label: 'CONTACT',
+    link: '/contact',
+  },
+  {
+    label: 'MENU',
+    link: '/#menu',
+  },
+  {
+    label: 'GALLERY',
+    link: '/gallery',
+  },
+]
 
 const isScrolled = ref(false)
 
@@ -47,7 +61,7 @@ const onModal = ref(false)
         ORDER ONLINE
       </sh-link-underline>
 
-      <div class="block lg:hidden self-center flex flex-row gap-14">
+      <div class="lg:hidden self-center flex flex-row gap-14">
         <sh-link-underline class="hidden md:block md:self-center md:p-0 lg:self-start lg:pt-5" to="/order">
           ORDER ONLINE
         </sh-link-underline>

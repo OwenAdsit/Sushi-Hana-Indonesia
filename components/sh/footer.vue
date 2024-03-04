@@ -15,6 +15,8 @@ const herobg = computed(() => {
   const bg = img('/img/bg-image.svg', { format: 'webp', width: 226, height: 527, opacity: 0.04 })
   return { backgroundImage: width.value < 768 ? 'none' : `url('${bg}')` }
 })
+
+// const { toggleOrder } = inject<{ toggleOrder: () => void }>('onOrder', { toggleOrder: () => {} })
 </script>
 
 <template>
@@ -22,7 +24,7 @@ const herobg = computed(() => {
     <div id="footer" :style="herobg" class="w-full">
       <div class="order-2 container p-0 mx-auto pt-14 md:pt-[70px] pb-6">
         <div class="flex justify-center">
-          <sh-link-underline>
+          <sh-link-underline to="/order">
             ORDER ONLINE
           </sh-link-underline>
         </div>

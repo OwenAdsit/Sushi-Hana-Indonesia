@@ -114,7 +114,7 @@ onMounted(() => {
           {{ hero?.heading }}
         </h1>
 
-        <sh-link-underline class="action fade-in-top">
+        <sh-link-underline class="action fade-in-top" to="/#menu">
           {{ hero?.action }}
         </sh-link-underline>
       </div>
@@ -126,7 +126,7 @@ onMounted(() => {
       </span>
     </div>
 
-    <div class="wrapper-subheading container mx-auto mt-[196px] flex flex-col items-center md:items-end  relative pb-[183px]">
+    <div class="wrapper-subheading container mx-auto mt-[196px] flex flex-col items-center md:items-end  relative pb-[183px] overflow-hidden">
       <nuxt-img
         src="/img/foodsurabaya@2x.png"
         format="webp"
