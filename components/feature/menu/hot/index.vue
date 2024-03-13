@@ -6,5 +6,6 @@
     </div>
 
     <feature-menu-hot-mobile />
+    <feature-menu-hot-medium />
   </div>
 </template>

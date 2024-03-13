@@ -6,5 +6,7 @@
     </div>
 
     <feature-menu-sushi-mobile />
+    <feature-menu-sushi-medium />
+    <feature-menu-sushi-desktop />
   </div>
 </template>

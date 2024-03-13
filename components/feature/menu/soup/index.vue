@@ -6,6 +6,7 @@
     </div>
 
     <feature-menu-soup-mobile />
+    <feature-menu-soup-medium />
     <feature-menu-soup-desktop />
   </div>
 </template>

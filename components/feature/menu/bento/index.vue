@@ -6,5 +6,6 @@
     </div>
 
     <feature-menu-bento-mobile />
+    <feature-menu-bento-medium />
   </div>
 </template>

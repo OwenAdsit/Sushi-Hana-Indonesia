@@ -6,6 +6,7 @@
     </div>
 
     <feature-menu-ramen-mobile />
+    <feature-menu-ramen-medium />
     <feature-menu-ramen-desktop />
   </div>
 </template>

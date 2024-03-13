@@ -4,5 +4,8 @@
       <span>MAKI</span>
       <span>マキ</span>
     </div>
+
+    <feature-menu-maki-mobile />
+    <feature-menu-maki-medium />
   </div>
 </template>

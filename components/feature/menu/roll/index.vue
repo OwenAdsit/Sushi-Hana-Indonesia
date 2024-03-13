@@ -4,5 +4,8 @@
       <span>SPECIAL ROLLS</span>
       <span>特別なロールズ</span>
     </div>
+
+    <feature-menu-roll-mobile />
+    <feature-menu-roll-medium />
   </div>
 </template>

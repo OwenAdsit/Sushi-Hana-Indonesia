@@ -11,8 +11,8 @@ const text = computed(() => {
 
 const onHover = ref(false)
 
-const base = 'group text-13 font-bold cursor-pointer flex flex-col transition-all duration-300 flex relative w-fit'
-const underline = 'after:block after:border-b after:border-light after:transition-transform after:ease-in-out after:duration-300 hover:after:border-primary'
+const base = 'group text-13 font-bold cursor-pointer inline-flex flex-col transition-all duration-300 flex relative w-fit'
+const underline = 'after:block after:border-b after:border-inherit after:transition-transform after:ease-in-out after:duration-300 hover:after:border-primary'
 </script>
 
 <template>

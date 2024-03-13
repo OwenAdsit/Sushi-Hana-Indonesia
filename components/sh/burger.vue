@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { VNodeRef } from 'vue'
 
+const { color = 'white' } = defineProps<{
+  color?: 'white' | 'black'
+}>()
+
 const menu = ref<VNodeRef | null>(null)
 
 const model = defineModel<boolean>()
@@ -37,7 +41,7 @@ watch(model, (val) => {
   top: 0;
   left: 0;
   padding: 0;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   transition: opacity 0.5s ease;
   outline: none;
   scale: 0.6;
@@ -53,7 +57,7 @@ watch(model, (val) => {
   position: absolute;
   top: 0;
   left: 0;
-  border-top: 1px solid white;
+  border-top: 1px solid v-bind(color);
   transform: translateY(22px);
   transition: transform 0.5s ease, border-color 0.5s ease 0.3s;
 }
@@ -64,7 +68,7 @@ watch(model, (val) => {
   left: 0;
   width: 100%;
   height: 1px;
-  background: white;
+  background: v-bind(color);
   transform: translateY(-22px);
   animation-name: topLineBurger;
   animation-duration: 0.6s;
@@ -78,7 +82,7 @@ watch(model, (val) => {
   left: 0;
   width: 100%;
   height: 1px;
-  background: white;
+  background: v-bind(color);
   transform: translateY(22px);
   animation-name: bottomLineBurger;
   animation-duration: 0.6s;

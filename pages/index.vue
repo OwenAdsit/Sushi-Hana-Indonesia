@@ -1,12 +1,16 @@
 <script setup lang="ts">
-definePageMeta({
-  scrollToTop: true,
-})
+// definePageMeta({
+//   scrollToTop: true,
+// })
 </script>
 
 <template>
   <div>
-    <feature-hero />
-    <feature-menu />
+    <NuxtLayout name="default">
+      <div id="homepage">
+        <feature-hero />
+        <feature-menu />
+      </div>
+    </NuxtLayout>
   </div>
 </template>
