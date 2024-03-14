@@ -11,10 +11,21 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'rotate', mode: 'default' },
+
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/img/sushi-hana-logo.png' },
+      ],
+      titleTemplate: '%s | Sushi Hana Indonesia',
+      title: 'Tastes of Japan in Indonesia',
+    },
+
   },
+
   css: [
     '~/assets/css/animation.css',
   ],
+
   vue: {
     propsDestructure: true,
 

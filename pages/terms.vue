@@ -6,6 +6,17 @@ const bgWidth = computed(() => {
     return '224px'
   return '453px'
 })
+
+useHead({
+  title: 'Terms & Conditions',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Sushi Hana Indonesia Terms & Conditions',
+    },
+  ],
+})
 </script>
 
 <template>

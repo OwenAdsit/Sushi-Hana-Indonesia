@@ -18,6 +18,17 @@ function onSelect(idx: number) {
   selectedImg.value = idx
   onModal.value = true
 }
+
+useHead({
+  title: 'Gallery',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Sushi Hana Indonesia Gallery',
+    },
+  ],
+})
 </script>
 
 <template>

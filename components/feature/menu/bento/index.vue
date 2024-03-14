@@ -7,5 +7,6 @@
 
     <feature-menu-bento-mobile />
     <feature-menu-bento-medium />
+    <feature-menu-bento-desktop />
   </div>
 </template>

@@ -1,3 +1,16 @@
+<script setup lang="ts">
+useHead({
+  title: 'Contact Us',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Contact Us Sushi Hana Indonesia',
+    },
+  ],
+})
+</script>
+
 <template>
   <div>
     <NuxtLayout name="default">

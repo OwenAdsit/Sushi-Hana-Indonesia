@@ -94,9 +94,15 @@ const herobg = computed(() => {
 
       <div class="flex flex-col md:flex-row items-center justify-between text-10">
         <div class="flex flex-row divide-x">
-          <sh-link v-for="link in footerLink" :key="link.text" class="!text-10 !font-normal hover:border-light px-3 md:px-9" :to="link.to">
-            {{ link.text }}
-          </sh-link>
+          <template v-for="link in footerLink" :key="link.text">
+            <span v-if="!link.to" class="!text-10 !font-normal hover:border-light px-3 md:px-9">
+              {{ link.text }}
+            </span>
+
+            <sh-link v-else class="!text-10 !font-normal hover:border-light px-3 md:px-9" :to="link.to">
+              {{ link.text }}
+            </sh-link>
+          </template>
         </div>
         <span class="px-3">
           Website by Two Moons Studio

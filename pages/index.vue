@@ -1,7 +1,14 @@
 <script setup lang="ts">
-// definePageMeta({
-//   scrollToTop: true,
-// })
+useHead({
+  title: 'Sushi Hana Indonesia',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Sushi Hana Indonesia',
+    },
+  ],
+})
 </script>
 
 <template>

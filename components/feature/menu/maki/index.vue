@@ -7,5 +7,6 @@
 
     <feature-menu-maki-mobile />
     <feature-menu-maki-medium />
+    <feature-menu-maki-desktop />
   </div>
 </template>

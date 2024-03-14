@@ -2,6 +2,17 @@
 definePageMeta({
   layout: 'fullpage',
 })
+
+useHead({
+  title: 'Order Online',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: 'Order Online Sushi Hana Indonesia',
+    },
+  ],
+})
 </script>
 
 <template>

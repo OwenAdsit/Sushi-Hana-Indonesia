@@ -7,5 +7,6 @@
 
     <feature-menu-roll-mobile />
     <feature-menu-roll-medium />
+    <feature-menu-roll-desktop />
   </div>
 </template>
