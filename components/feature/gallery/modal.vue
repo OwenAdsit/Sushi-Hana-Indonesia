@@ -9,6 +9,8 @@ const { images, selectedImg } = defineProps<{
 
 const emit = defineEmits(['update:modelValue'])
 
+const { width } = useWindowSize()
+
 const model = defineModel<boolean>()
 
 const carousel = ref<VNodeRef | null>(null)
@@ -28,13 +30,18 @@ function onAppear(el: HTMLElement, done: any) {
 function onLeave() {
   document.body.classList.remove('overflow-hidden')
 }
+
+const itemCount = computed(() => {
+  if (width.value < 768) return 1.5
+  return 2.5
+})
 </script>
 
 <template>
   <Transition name="slide-fade" @enter="onAppear" @leave="onLeave">
     <div v-if="model" class="fixed top-0 left-0 w-screen h-screen bg-dark/95 z-[1000] flex items-center justify-between">
       <div class="carousel-viewport w-full h-full py-10 overflow-hidden" @click="closeCarousel">
-        <sh-carousel ref="carousel" :items-to-show="2.5" :wrap-around="true">
+        <sh-carousel ref="carousel" :items-to-show="itemCount" :wrap-around="true">
           <sh-slide v-for="(img, i) in images" :key="img.name" :ref="(e) => { carousel?.data?.currentSlide.value === (e as any)?.index && (activeRef = e) }">
             <div class="carousel__item text-light transition-all duration-500 w-full h-full relative">
               <img :src="img.image || ''" class="transition-all duration-500 w-full h-full object-contain" :class="[i === carousel?.data?.currentSlide.value ? 'item--active' : 'item--inactive cursor-pointer']" @click.stop="carousel?.slideTo(i)">
